@@ -49,8 +49,9 @@ router.get('/:taskId', (request, response) => {
 //Altero somente o que eu quero
 router.patch('/:taskId', checkAuth, (request, response) => {
     const task = db[request.params.taskId];
+    const hasValue = request.body.done != null
     if (task) {
-      task.done = request.body.done || task.done;
+      task.done = hasValue ? request.body.done : task.done;
       task.description = request.body.description || task.description;
       response.json(task);
     } else {
