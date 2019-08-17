@@ -2,7 +2,9 @@ const checkAuth = (request, response, next) => {
 
     const token = request.headers.authorization;
     
+    //A linha abaixo serve para pegarmos o token
     //console.log('Token ====> ' + token);
+    
     //Se o token esta correto (Basic token)
     //user: dm124
     //senha: alunoinatel
