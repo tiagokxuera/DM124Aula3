@@ -4,9 +4,16 @@ const router = express.Router();
 const checkAuth = require('../middleware/check-auth');
 
 router.post('/', checkAuth,(request, response) => {
-  response.status(201).json({
-    message: 'The task has been created'
-  });
+    //Criamos uma new Task
+    const newTask = {
+        id: Date.now(),
+        done: request.body.done || false,
+        description: request.body.description
+    }
+    response.status(201).json({
+        message: 'The task has been created',
+        newTask
+    });
 });
 
 router.get('/', (request, response) => {
