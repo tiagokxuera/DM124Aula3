@@ -64,13 +64,10 @@ router.delete('/:taskId', checkAuth, (request, response) => {
     const task = db[request.params.taskId];
     if(task) {
       delete db[task.id];
-      response.status(200).json({
-        message: 'Deleted'
-      });
+      response.status(200).end();
     } else {
       notFound(request, response);
     }
 });
    
-
 module.exports = router;
