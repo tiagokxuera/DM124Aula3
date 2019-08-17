@@ -1,0 +1,9 @@
+{
+  "name": "t160-nodejs-restful",
+  "private": true,
+  "scripts": {
+    "start": "",
+    "start:dev": ""
+  }
+ }
+ 
