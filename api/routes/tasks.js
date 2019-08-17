@@ -7,4 +7,11 @@ router.post('/', (request, response) => {
   });
 });
 
+router.get('/', (request, response) => {
+    response.status(200).json({
+      message: 'Handling GET requests to /tasks'
+    });
+});
+   
+
 module.exports = router;
